@@ -1,4 +1,4 @@
-package com.noderemindertodo.nodesreminderstodos;
+package com.noderemindertodo.nodesreminderstodos.note;
 
 
 import jakarta.persistence.*;

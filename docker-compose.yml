@@ -10,7 +10,17 @@ services:
       - POSTGRES_PASSWORD=qwerty123
     volumes:
       - db:/var/lib/postgresql/data
-
+  postgres-test:
+    image: "postgres:14"
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_DB: nrtd-test
+      POSTGRES_USER: nrtd-test
+      POSTGRES_PASSWORD: test123
+    volumes:
+      - db1:/var/lib/postgresql/data
 
 volumes:
   db:
+  db1:

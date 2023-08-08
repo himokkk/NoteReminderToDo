@@ -6,11 +6,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/todo")
 public class ToDoController {
     @Autowired
     private ToDoRepository toDoRepository;
+
+    @GetMapping()
+    public ResponseEntity<List<ToDo>> getToDos() {
+        return ResponseEntity.ok(toDoRepository.findAll());
+    }
 
     @GetMapping("/{id}")
     public ResponseEntity<ToDo> getToDoById(@PathVariable Integer id) {

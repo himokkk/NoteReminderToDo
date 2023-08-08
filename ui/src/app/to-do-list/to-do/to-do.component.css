@@ -1,0 +1,32 @@
+:host {
+  display: flex;
+  box-sizing: border-box;
+  border: 1px solid #818181;
+  border-radius: 4px;
+  padding: 0.3em;
+  margin: 0.3rem;
+}
+
+.toDo {
+  width: 100%;
+  margin: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.toDo span {
+  flex: 1;
+}
+
+.toDo input {
+  margin: 0.5rem;
+}
+
+.toDo button {
+  padding: 0.2rem;
+}
+
+.toDo input:hover,
+.toDo button {
+  cursor: pointer;
+}

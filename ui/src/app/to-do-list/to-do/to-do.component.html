@@ -1,0 +1,13 @@
+<ng-template [ngIf]="toDo">
+  <div class="toDo">
+    <span>{{ toDo.text }}</span>
+    <input
+      type="checkbox"
+      (click)="toggleIsDone()"
+      [(ngModel)]="toDo.isDone"
+    />
+    <button (click)="deleteToDoButton()">
+      Delete
+    </button>
+  </div>
+</ng-template>

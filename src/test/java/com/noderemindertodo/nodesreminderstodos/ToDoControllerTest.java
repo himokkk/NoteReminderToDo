@@ -2,7 +2,6 @@ package com.noderemindertodo.nodesreminderstodos;
 
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.noderemindertodo.nodesreminderstodos.note.Note;
 import com.noderemindertodo.nodesreminderstodos.todo.ToDo;
 import com.noderemindertodo.nodesreminderstodos.todo.ToDoRepository;
 import org.junit.jupiter.api.Test;

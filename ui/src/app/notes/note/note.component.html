@@ -1,0 +1,13 @@
+<ng-container *ngIf="note">
+  <div *ngIf="!editMode">
+    <span>{{ note.text }}</span>
+    <button (click)="performDeleteNote()">Delete</button>
+    <button (click)="editMode = true; editedText = note.text">Edit</button>
+  </div>
+
+  <div *ngIf="editMode">
+    <input [(ngModel)]="editedText" />
+    <button (click)="performUpdateNote()">Save</button>
+    <button (click)="cancelEdit()">Cancel</button>
+  </div>
+</ng-container>

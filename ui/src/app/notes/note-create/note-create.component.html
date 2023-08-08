@@ -1,0 +1,10 @@
+<form #form="ngForm" (ngSubmit)="performCreateNote(); form.resetForm()">
+  <input
+    type="text"
+    placeholder="note: note example"
+    name="todo"
+    [(ngModel)]="text"
+    required
+  />
+  <button>Create</button>
+</form>

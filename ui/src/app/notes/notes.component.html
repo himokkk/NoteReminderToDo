@@ -1,1 +1,11 @@
-<p>notes works!</p>
+<app-note-create
+  (createNote)="createNote($event)"
+></app-note-create>
+
+<app-note
+  *ngFor="let note of noteList | async"
+  [note]="note"
+  (deleteNote)="deleteNote($event)"
+  (updateNote)="updateNote($event)"
+></app-note>
+

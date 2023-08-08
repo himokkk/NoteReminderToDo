@@ -10,6 +10,8 @@ import { ToDoComponent } from "./to-do-list/to-do/to-do.component";
 import {HttpClientModule} from "@angular/common/http";
 import {FormsModule} from "@angular/forms";
 import { ToDoCreateComponent } from './to-do-list/to-do-create/to-do-create.component';
+import { NoteComponent } from './notes/note/note.component';
+import { NoteCreateComponent } from './notes/note-create/note-create.component';
 
 @NgModule({
     declarations: [
@@ -18,7 +20,9 @@ import { ToDoCreateComponent } from './to-do-list/to-do-create/to-do-create.comp
         ReminderComponent,
         NotesComponent,
         ToDoComponent,
-        ToDoCreateComponent
+        ToDoCreateComponent,
+        NoteComponent,
+        NoteCreateComponent
     ],
   imports: [
     BrowserModule,

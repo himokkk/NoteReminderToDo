@@ -1,0 +1,9 @@
+<app-reminder-create (createReminder)="createReminder($event)"
+></app-reminder-create>
+<app-reminder
+  *ngFor="let reminder of reminders | async"
+  [reminder]="reminder"
+  (updateReminder)="updateReminder($event)"
+  (deleteReminder)="deleteReminder($event)"
+>
+</app-reminder>

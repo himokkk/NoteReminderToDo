@@ -33,6 +33,7 @@ public class ReminderController {
                 () -> new ResourceNotFoundException("Reminder of id: {id} not found"));
 
         existingReminder.setText(requestedReminder.getText());
+        existingReminder.setReminderTime(requestedReminder.getReminderTime());
         Reminder savedReminder = reminderRepository.save(existingReminder);
         return ResponseEntity.ok(savedReminder);
     }

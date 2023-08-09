@@ -1,0 +1,12 @@
+<div class="reminder_create_container">
+  <form [formGroup]="reminderForm" (ngSubmit)="submitForm()">
+    <div>
+      <input type="text" name="text" formControlName="text"/>
+      <button type="submit" [disabled]="!reminderForm.valid">Submit</button>
+    </div>
+    <div>
+      <input type="time" name="time" formControlName="time" required/>
+      <input type="date" name="date" formControlName="date" [value]="minDate" [min]="minDate" />
+    </div>
+  </form>
+</div>

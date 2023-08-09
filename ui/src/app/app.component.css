@@ -1,4 +1,16 @@
 .container {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container div {
+  display: flex;
   justify-content: space-around;
+}
+
+button {
+  border: 1px solid black;
+  width: 6rem;
+  margin-bottom: 0.2rem;
 }

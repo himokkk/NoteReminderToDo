@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ui';
+  selectedOption: number = 1;
+
+  selectOption(option: number) {
+    this.selectedOption = option;
+  }
 }

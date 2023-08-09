@@ -1,7 +1,9 @@
 <app-to-do-create (performCreateToDo)="performCreateToDo($event)"></app-to-do-create>
-<button (click)="changeFilter()" class="filter_button">
-  {{ onlyCompleted ? "Show Incompleted" : "Show Completed" }}
-</button>
+<div class="filter_button_container">
+  <button (click)="changeFilter()">
+    {{ onlyCompleted ? "Show Incompleted" : "Show Completed" }}
+  </button>
+</div>
 <ng-container *ngIf="onlyCompleted">
   <app-to-do
     *ngFor="let toDo of completedToDos | async"

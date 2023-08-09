@@ -44,5 +44,6 @@ export class ReminderCreateComponent {
     };
 
     this.createReminder.emit(newReminder);
+    this.reminderForm.reset();
   }
 }

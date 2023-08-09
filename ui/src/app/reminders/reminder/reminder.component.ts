@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnChanges, Output, SimpleChanges} from '@angular/core';
 import Reminder from "../models/reminder";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {formatHourMinute, formatYearMonthDay, formatYearMonthDayHourMinute} from "../../functions/formatDate";
@@ -8,7 +8,7 @@ import {formatHourMinute, formatYearMonthDay, formatYearMonthDayHourMinute} from
   templateUrl: './reminder.component.html',
   styleUrls: ['./reminder.component.css']
 })
-export class ReminderComponent {
+export class ReminderComponent implements OnChanges {
   @Input("reminder") reminder: Reminder | null = null;
   @Output("updateReminder") updateReminder: EventEmitter<Reminder> = new EventEmitter();
   @Output("deleteReminder") deleteReminder: EventEmitter<Reminder> = new EventEmitter();
@@ -17,6 +17,7 @@ export class ReminderComponent {
   editMode: boolean = false;
   editedText: string = "";
   minDate: string;
+  activeReminder: boolean = true;
 
   constructor(private formBuilder: FormBuilder) {
     const today: Date = new Date();
@@ -29,11 +30,48 @@ export class ReminderComponent {
     });
   }
 
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes.hasOwnProperty("reminder")) {
+      this.checkReminder();
+    }
+  }
+
+  checkReminder = () => {
+    if (!this.reminder) {
+      throw new Error('cannot work on null');
+    }
+
+    const deltaTime = this.calculateTimeDifference();
+    if(deltaTime < 0 || !this.activeReminder) {
+      this.activeReminder = false;
+      return;
+    }
+    if (deltaTime < 2500) {
+      alert('Reminder:' + this.reminder.text);
+      this.activeReminder = false;
+    } else {
+      setTimeout(this.checkReminder, 1000); // Check every second
+    }
+  };
+
+
+
+  calculateTimeDifference() {
+    if (!this.reminder) {
+      throw new Error('cannot update on null');
+    }
+    const [year, month, day, hour, minute] = this.reminder.reminderTime;
+
+    const currentTime = new Date().getTime();
+    const reminderTime = new Date(year, month - 1, day, hour, minute).getTime();
+    return reminderTime - currentTime;
+  }
+
   performDelete() {
     if (!this.reminder) {
       throw new Error('cannot update on null');
     }
-
+    this.activeReminder = false;
     this.deleteReminder.emit(this.reminder);
   }
 
@@ -60,7 +98,10 @@ export class ReminderComponent {
         ...timeControl.value.split(":").map((part: string) => parseInt(part))
       ]
     };
-
+    if(!this.activeReminder) {
+      this.checkReminder();
+      this.activeReminder = true;
+    }
     this.updateReminder.emit({
       ...newReminder,
     });

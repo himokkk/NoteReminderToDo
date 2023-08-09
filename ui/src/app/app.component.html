@@ -1,5 +1,17 @@
 <div class="container">
-  <app-notes></app-notes>
-  <app-to-do-list></app-to-do-list>
-  <app-reminders></app-reminders>
+  <button (click)="selectOption(1)">Note</button>
+  <button (click)="selectOption(2)">ToDo</button>
+  <button (click)="selectOption(3)">Reminders</button>
+  <div>
+    <div *ngIf="selectedOption === 1">
+      <app-notes></app-notes>
+    </div>
+    <div *ngIf="selectedOption === 2">
+          <app-to-do-list></app-to-do-list>
+
+    </div>
+    <div *ngIf="selectedOption === 3">
+      <app-reminders></app-reminders>
+    </div>
+  </div>
 </div>

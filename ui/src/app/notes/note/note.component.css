@@ -1,0 +1,32 @@
+:host {
+  display: flex;
+  box-sizing: border-box;
+  border: 1px solid #818181;
+  border-radius: 4px;
+  padding: 0.3em;
+  margin: 0.3rem;
+}
+
+.note {
+  width: 100%;
+  margin: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.note span {
+  flex: 1;
+}
+
+.note input {
+  margin: 0.5rem;
+}
+
+.note button {
+  margin: 0 0.2rem;
+}
+
+.editMode input,
+.editMode button {
+ margin: 0.2rem;
+}

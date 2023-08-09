@@ -1,13 +1,19 @@
 <ng-template [ngIf]="toDo">
   <div class="toDo">
     <span>{{ toDo.text }}</span>
-    <input
-      type="checkbox"
-      (click)="toggleIsDone()"
-      [(ngModel)]="toDo.isDone"
-    />
+    <label class="custom-checkbox">
+      <input
+        type="checkbox"
+        (click)="toggleIsDone()"
+        [(ngModel)]="toDo.isDone"
+      />
+      <span class="checkmark">
+        <i class="fa-solid fa-check"></i>
+        <i class="fa-solid fa-times"></i>
+      </span>
+    </label>
     <button (click)="deleteToDoButton()">
-      Delete
+      <i class="fa-solid fa-trash-can"></i>
     </button>
   </div>
 </ng-template>

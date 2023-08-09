@@ -22,11 +22,44 @@
   margin: 0.5rem;
 }
 
-.toDo button {
-  padding: 0.2rem;
-}
-
 .toDo input:hover,
 .toDo button {
   cursor: pointer;
+}
+
+.custom-checkbox {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.custom-checkbox input {
+  opacity: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black  ;
+}
+
+.custom-checkbox input:checked + .checkmark .fa-check {
+  display: block;
+}
+
+.custom-checkbox input:checked + .checkmark .fa-times {
+  display: none;
+}
+
+.custom-checkbox input:not(:checked) + .checkmark .fa-check {
+  display: none;
+}
+
+.custom-checkbox input:not(:checked) + .checkmark .fa-times {
+  display: block;
 }

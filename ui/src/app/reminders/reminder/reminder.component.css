@@ -1,0 +1,40 @@
+:host {
+  display: flex;
+  box-sizing: border-box;
+  border: 1px solid #818181;
+  border-radius: 4px;
+  padding: 0.3em;
+  margin: 0.3rem;
+}
+
+.reminder {
+  width: 100%;
+  margin: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.reminder span {
+  flex: 1;
+}
+
+.reminder button {
+  margin: 0.2rem 0.2rem;
+}
+
+.reminder input[type=text] {
+  width: 1rem;
+}
+
+.reminder form > div:first-child {
+  margin-bottom: 1rem;
+}
+
+.reminder form > div:last-child {
+  margin-top: 1rem;
+}
+
+.editMode input,
+.editMode button {
+  margin: 0.2rem;
+}

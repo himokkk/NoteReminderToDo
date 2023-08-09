@@ -1,8 +1,12 @@
-.reminder_create_container > div:first-child {
-  padding: 0.3rem;
+form > div:first-child {
+  padding: 0.2rem;
 }
 
-.reminder_create_container > div:last-child {
+form > div:first-child button {
+  margin-left: 0.5rem;
+}
+
+form > div:last-child {
   padding: 0.3rem;
   display: flex;
   gap: 0.3rem;

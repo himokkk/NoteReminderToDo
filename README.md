@@ -12,6 +12,6 @@
 
 - Angular
 - Java Spring boot
-- docker-compose 
+- Docker
 - PostgreSQL
 

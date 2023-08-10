@@ -16,6 +16,10 @@
 
 .reminder span {
   flex: 1;
+  max-width: 30rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
 }
 
 .reminder button {

@@ -1,6 +1,6 @@
 <form [formGroup]="reminderForm" (ngSubmit)="submitForm()">
   <div>
-    <input type="text" name="text" formControlName="text" placeholder="create reminder"/>
+    <input type="text" name="text" formControlName="text" placeholder="create reminder" autocomplete="off"/>
     <button type="submit" [disabled]="!reminderForm.valid">
       <i class="fa-solid fa-plus"></i>
     </button>
